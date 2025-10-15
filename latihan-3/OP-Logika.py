@@ -2,7 +2,7 @@ print("OPERATOR LOGIKA, IDENTITAS, DAN BITWISE")
 print("=" * 40)
 
 # Data nilai siswa
-mtk = 60
+mtk = 100
 ipa = 50
 
 print(f"Nilai Matematika: {mtk}")
