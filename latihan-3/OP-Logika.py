@@ -3,7 +3,7 @@ print("=" * 40)
 
 # Data nilai siswa
 mtk = 60
-ipa = 40
+ipa = 50
 
 print(f"Nilai Matematika: {mtk}")
 print(f"Nilai IPA: {ipa}")
