@@ -1,35 +1,48 @@
-# Program Kalkulator Sederhana
-# ----------------------------
-def tambah(x, y):
-    return x + y
+import math
 
-def kurang(x, y):
-    return x - y
+while True:
+    print("\n" + "="*40)
+    print("🧮  \033[92m=== KALKULATOR SEDERHANA ===\033[0m  🧮")
+    print("="*40)
 
-def kali(x, y):
-    return x * y
+    angka1 = float(input("Masukkan angka pertama: "))
+    operasi = input("Pilih operasi (+, -, x, /, ^, %, √): ")
 
-def bagi(x, y):
-    return x / y
+    if operasi in ["+", "-", "x", "/", "^", "%"]:
+        angka2 = float(input("Masukkan angka kedua: "))
 
-print("Pilih operasi: ")
-print("1. Tambah")
-print("2. Kurang")
-print("3. Kali")
-print("4. Bagi")
+        if operasi == "+":
+            hasil = angka1 + angka2
+        elif operasi == "-":
+            hasil = angka1 - angka2
+        elif operasi == "x":
+            hasil = angka1 * angka2
+        elif operasi == "/":
+            if angka2 == 0:
+                print("Tidak bisa di bagi 0")
+                continue
+            hasil = angka1 / angka2
+        elif operasi == "^":
+            hasil = angka1 ** angka2
+        elif operasi == "%":
+            hasil = angka1 % angka2
 
-pilihan = input("Masukkan pilihan (1/2/3/4): ")
+        print("="*35)
+        hasil = round(hasil, 2)
+        print(f"Hasil: {angka1} {operasi} {angka2} = {hasil}")
+        print("="*35)
 
-angka1 = float(input("Masukkan angka pertama: "))
-angka2 = float(input("Masukkan angka kedua: "))
+    elif operasi == "√":
+        hasil = math.sqrt(angka1)
+        print("="*35)
+        print(f"Hasil: √{angka1} = {hasil}")
+        print("="*35)
 
-if pilihan == '1':
-    print(f"Hasil: {tambah(angka1, angka2)}")
-elif pilihan == '2':
-    print(f"Hasil: {kurang(angka1, angka2)}")
-elif pilihan == '3':
-    print(f"Hasil: {kali(angka1, angka2)}")
-elif pilihan == '4':
-    print(f"Hasil: {bagi(angka1, angka2)}")
-else:
-    print("Pilihan tidak valid!")
+    else:
+        print("Operasi yang anda masukkan salah!")
+
+    repeat = input("Hitung lagi? (y/n): ").lower()
+    if repeat != "y":
+        break
+
+print("Terima kasih telah memakai layanan kalkulator sederhana kami ✨\n")
