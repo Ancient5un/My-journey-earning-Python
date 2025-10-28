@@ -20,4 +20,5 @@ while(True):
     else:
         if bil == 1:
             print(" Ganjil ")
+
             break  # keluar dari looping
